@@ -1,1 +1,36 @@
+class BmsThread extends Thread{
+ public void run(){
+ try{
+ while (true) {
+ System.out.println("BMS college of Engineering");
+ Thread.sleep(10000);
+ }
+ }catch(InterruptedException e){
+ System.out.println(e);
+ }
+ }
+}
+ class CseThread implements Runnable{
+ Thread t;
+ public void run(){
+ try{
+ while (true) {
+ System.out.println("Cse");
+ Thread.sleep(2000);
+ }
+ }catch(InterruptedException e){
+ System.out.println(e);
+ }
+ }
+49
+}
+public class DemoThread {
+ public static void main(String[] args) {
+ BmsThread b=new BmsThread();
+ Runnable cse=new CseThread();
+ Thread t1=new Thread(cse);
+ b.start();
+ t1.start();;
+ }
+}
 
